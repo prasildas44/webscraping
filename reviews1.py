@@ -10,11 +10,11 @@ class Reviews1Spider(scrapy.Spider):
 
     def parse(self, response):
         yield{
-        	# 'author':response.xpath('//span[contains (@class,"a-profile-name")]/text()').extract(),
+        	'author':response.xpath('//span[contains (@class,"a-profile-name")]/text()').extract(),
         	'title': response.xpath("//a[contains(@class,'a-size-base a-link-normal review-title a-color-base a-text-bold')]/text()").extract(),
-        	# 'review': response.xpath("//div[contains (@class, 'a-expander-content a-expander-partial-collapse-content')]/text()").extract(),
-        	# 'rating': response.xpath('//i[contains(@data-hook,"review-star-rating")]/span[contains(@class,"a-icon-alt")]/text()').extract(),
-        	# 'useful':response.xpath('//span[contains(@data-hook,"helpful-vote-statement")]/text()').extract(),
+        	'review': response.xpath("//div[contains (@class, 'a-expander-content a-expander-partial-collapse-content')]/text()").extract(),
+        	'rating': response.xpath('//i[contains(@data-hook,"review-star-rating")]/span[contains(@class,"a-icon-alt")]/text()').extract(),
+        	'useful':response.xpath('//span[contains(@data-hook,"helpful-vote-statement")]/text()').extract(),
 
 
 
